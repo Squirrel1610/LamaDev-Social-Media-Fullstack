@@ -1,32 +1,32 @@
 export const Users = [
     {
       id:1,
-      profilePicture: "assets/person/thinh.jpg",
+      profilePicture: "person/thinh.jpg",
       username: "Nguyen Duy Thinh",
     },
     {
       id:2,
-      profilePicture: "assets/person/tai.jpg",
+      profilePicture: "person/tai.jpg",
       username: "Nguyen Tien Tai",
     },
     {
       id:3,
-      profilePicture: "assets/person/thainam.jpg",
+      profilePicture: "person/thainam.jpg",
       username: "Thai Van Nam",
     },
     {
       id:4,
-      profilePicture: "assets/person/tri.jpg",
+      profilePicture: "person/tri.jpg",
       username: "Tran Ngoc Tri",
     },
     {
       id:5,
-      profilePicture: "assets/person/vinh.jpg",
+      profilePicture: "person/vinh.jpg",
       username: "Dang Hoang Vinh",
     },
     {
       id:6,
-      profilePicture: "assets/person/thao.jpg",
+      profilePicture: "person/thao.jpg",
       username: "Nguyen Thuy Hanh Thao",
     }
   ];
@@ -35,7 +35,7 @@ export const Users = [
     {
       id: 1,
       desc: "Love For All, Hatred For None.",
-      photo: "assets/post/post1.jpeg",
+      photo: "post/post1.jpeg",
       date: "5 mins ago",
       userId: 1,
       like: 32,
@@ -43,7 +43,7 @@ export const Users = [
     },
     {
       id: 2,
-      photo: "assets/post/post2.jpeg",
+      photo: "post/post2.jpeg",
       date: "15 mins ago",
       userId: 2,
       like: 2,
@@ -52,7 +52,7 @@ export const Users = [
     {
       id: 3,
       desc: "Every moment is a fresh beginning.",
-      photo: "assets/post/post3.jpeg",
+      photo: "post/post3.jpeg",
       date: "1 hour ago",
       userId: 3,
       like: 61,
@@ -60,7 +60,7 @@ export const Users = [
     },
     {
       id: 4,
-      photo: "assets/post/post1.jpeg",
+      photo: "post/post1.jpeg",
       date: "4 hours ago",
       userId: 4,
       like: 7,

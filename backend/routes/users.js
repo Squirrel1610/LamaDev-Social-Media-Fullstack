@@ -59,9 +59,14 @@ router.delete("/:id", async (req, res) => {
 
 
 //get a user
-router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
-        const user = await User.findById(req.params.id);
+        const userId = req.query.userId;
+        const username = req.query.username;
+
+        const user = userId 
+        ? await User.findById(userId)
+        : await User.findOne({username});
         const {password, updatedAt, ...other} = user._doc;
         return res.status(200).json({
             success: true,
@@ -157,5 +162,33 @@ router.put("/:id/unfollow", async (req, res) =>{
         })
     }
 })
+
+//get friends
+router.get("/friends/:userId", async (req, res) => {
+    try {
+      const user = await User.findById(req.params.userId);
+      const friends = await Promise.all(
+        user.followings.map((friendId) => {
+          return User.findById(friendId);
+        })
+      );
+      let friendList = [];
+      friends.map((friend) => {
+        const { _id, username, profilePicture } = friend;
+        friendList.push({ _id, username, profilePicture });
+      });
+      return res.status(200).json({
+        success: true,
+        message: "Get friend list success",
+        data: friendList
+      })
+    } catch (err) {
+        console.log(error.message);
+        return res.status(500).json({
+            success: false,
+            message: "Get friend list fail"
+        });
+    }
+  });
 
 module.exports = router;

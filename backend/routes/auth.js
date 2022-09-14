@@ -58,7 +58,8 @@ router.post("/login", async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: "Login success"
+            message: "Login success",
+            data: user
         })
     } catch (error) {
         console.error(error.message);
